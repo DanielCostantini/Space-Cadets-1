@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 public class EmailChallenge {
 
+	/**
+	 * Finds the name of an ESC staff member given their email ID
+	 * 
+	 * @param args
+	 * @throws MalformedURLException
+	 */
 	public static void main(String[] args) throws MalformedURLException {
 
 		// Asks for the email ID and appends it to the web address
@@ -21,6 +27,11 @@ public class EmailChallenge {
 
 	}
 
+	/**
+	 * Asks the user for an email ID and returns it
+	 * 
+	 * @return id the string entered by the user
+	 */
 	private static String getEmailID() {
 
 		System.out.println("Enter user ID:");
@@ -34,6 +45,13 @@ public class EmailChallenge {
 
 	}
 
+	/**
+	 * Makes the String all lowercase and removes any characters which are not
+	 * numbers or letters
+	 * 
+	 * @param emailID the user input
+	 * @return text the formatted emailID
+	 */
 	private static String formatID(String emailID) {
 
 		// Makes the input lower case
@@ -56,6 +74,13 @@ public class EmailChallenge {
 
 	}
 
+	/**
+	 * Connects to the web page and reads the source code until it gets to the line
+	 * containing the name
+	 * 
+	 * @param url the url of the page to get the name from
+	 * @return the line of source code that contains the name
+	 */
 	private static String getSourceCode(URL url) {
 
 		String text = "";
@@ -88,6 +113,12 @@ public class EmailChallenge {
 
 	}
 
+	/**
+	 * Takes in the source code and finds the name of the user of the given email ID
+	 * 
+	 * @param source the line of source code containing the name
+	 * @return the name
+	 */
 	private static String getName(String source) {
 
 		String text = "";
